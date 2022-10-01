@@ -3,19 +3,16 @@
     <div v-if="!cartStore.isEmpty" class="">
       <div v-for="item in cartStore.items" :key="item.uuid" class=" rounded-sm p-3 bg-gray-100 my-3 shadow-sm">
         <div class="flex flex-row justify-evenly">
-          <div class="flex flex-col w-1/3">
+          <img class="rounded-full h-[80px] w-[80px] object-cover" :src="item.photoURL" />
+          <div class="flex flex-col max-w-[100px]">
             <h5 class="font-serif text-gray-600">{{item.name}}</h5>
             <p class="font-light text-xs">SKU {{item.uuid}}</p>
           </div>
-          <div class="flex flex-col justify-center center">
-
-
-
+          <div class="flex flex-col mt-2">
             <div class="flex flex-row m-0 ">
               <button @click="cartStore.increment(item)"
-                class="-py-1 px-2 first-letter:border-2 m-0 border-r-0 border-gray-200 bg-white">+</button>
-              <span
-                class="-py-1 px-2 first-letter:border-2 m-0 border-r-0 border-gray-200 bg-white">{{item.amount}}</span>
+                class=" px-2 first-letter:border-2 m-0 border-r-0 border-gray-200 bg-white">+</button>
+              <span class=" px-2 first-letter:border-2 m-0 border-r-0 border-gray-200 bg-white">{{item.amount}}</span>
               <button @click="cartStore.decrement(item)"
                 class="-py-1 pr-3 pl-2 m-0  bg-white -tracking-[0.25em]">--</button>
             </div>
@@ -50,7 +47,8 @@
         </div>
       </div>
 
-      <button class="w-full rounded-sm bg-indigo-500 text-white hover:bg-indigo-600 px-3 py-4 my-10">Checkout</button>
+      <button @click="sidebarStore.setPage('checkout')"
+        class="w-full rounded-sm bg-indigo-500 text-white hover:bg-indigo-600 px-3 py-4 my-10">Checkout</button>
 
     </div>
     <div v-else>Cart is empty</div>
@@ -58,6 +56,8 @@
 </template>
 <script setup>
 import { useCartStore } from '~~/store/cart';
+import { useSidebarStore } from '~~/store/sidebar';
 const cartStore = useCartStore();
+const sidebarStore = useSidebarStore();
 
 </script>

@@ -1,30 +1,58 @@
 [
   {
     "uuid": "5b9ed8b5-201e-",
-    "name": "Camera model 1",
+    "name": "Watermelon",
     "description": "Lorem ipsum dolor sit amet.",
-    "price": 950,
-    "photoURL": "https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "price": 12,
+    "photoURL": "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
   },
   {
     "uuid": "973b3d42-e039-",
-    "name": "Camera model 2",
+    "name": "Avocado",
     "description": "Lorem ipsum dolor sit amet.",
-    "price": 950,
-    "photoURL": "https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+    "price": 6,
+    "photoURL": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80"
   },
   {
     "uuid": "33d3332e-42ac-",
-    "name": "Camera model 3",
+    "name": "Orange",
     "description": "Lorem ipsum dolor sit amet.",
-    "price": 950,
-    "photoURL": "https://images.pexels.com/photos/249597/pexels-photo-249597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "price": 4,
+    "photoURL": "https://images.unsplash.com/photo-1586439702132-55ce0da661dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
   },
   {
     "uuid": "c70080cd-330f-",
-    "name": "Camera model 4",
+    "name": "Banana",
     "description": "Lorem ipsum dolor sit amet.",
-    "price": 950,
-    "photoURL": "https://images.pexels.com/photos/1091294/pexels-photo-1091294.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    "price": 15,
+    "photoURL": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+  },
+  {
+    "uuid": "5b9ed8b5-201e-",
+    "name": "Watermelon",
+    "description": "Lorem ipsum dolor sit amet.",
+    "price": 12,
+    "photoURL": "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "uuid": "973b3d42-e039-",
+    "name": "Avocado ",
+    "description": "Lorem ipsum dolor sit amet.",
+    "price": 6,
+    "photoURL": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80"
+  },
+  {
+    "uuid": "33d3332e-42ac-",
+    "name": "Orange",
+    "description": "Lorem ipsum dolor sit amet.",
+    "price": 4,
+    "photoURL": "https://images.unsplash.com/photo-1586439702132-55ce0da661dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+  },
+  {
+    "uuid": "c70080cd-330f-",
+    "name": "Banana",
+    "description": "Lorem ipsum dolor sit amet.",
+    "price": 15,
+    "photoURL": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
   }
 ]
