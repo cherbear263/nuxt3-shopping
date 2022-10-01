@@ -45,12 +45,12 @@
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <NuxtLink to="/"
-                class="active:bg-gray-900 active:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-                aria-current="page">Home</NuxtLink>
+              <NuxtLink to="/" class=" text-gray-300 px-3 py-2 rounded-md text-sm font-medium hover:bg-indigo-500"
+                aria-current="page">Home
+              </NuxtLink>
 
-              <a href="#" @click="sidebarStore.toggleSidebar"
-                class="text-gray-300 active:bg-gray-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Shopping
+              <a @click="sidebarStore.toggleSidebar"
+                class=" text-gray-300 hover:bg-indigo-500  px-3 py-2 rounded-md text-sm font-medium">Shopping
                 Cart</a>
 
             </div>

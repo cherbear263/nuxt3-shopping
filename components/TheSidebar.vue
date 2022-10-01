@@ -1,9 +1,9 @@
 <template>
-  <aside v-if="sidebarStore.sidebarOpen">
+  <aside v-if="sidebarStore.sidebarOpen" class="">
     <div @click="sidebarStore.toggleSidebar" class="absolute transition ease inset-0 h-full w-full z-0 bg-black/40 ">
     </div>
     <div :class="sidebarStore.sidebarOpen ? 'right-0' : '-right-96'"
-      class="transition-transform top-0 bottom-0 w-96 z-10 offcanvas offcanvas-end fixed flex flex-col max-w-full bg-white  bg-clip-padding shadow-sm outline-none duration-500 ease-in-out text-gray-700 border-none"
+      class="transition-transform top-0 bottom-0 z-10 offcanvas offcanvas-end w-[90%] sm:w-[500px] fixed  bg-white  bg-clip-padding shadow-sm outline-none duration-500 ease-in-out text-gray-700 border-none"
       tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header flex items-center justify-between p-4">
         <h5 class="offcanvas-title text-indigo-500 mb-0 leading-normal text-xl font-bold" id="offcanvasRightLabel">

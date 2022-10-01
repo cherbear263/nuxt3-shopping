@@ -1,5 +1,7 @@
 # Nuxt 3 Ecommerce Store
-Basic Ecommerce store, developed in Nuxt 3 with Pinia store and TailwindCSS
+Basic Ecommerce store, developed in Nuxt 3 with Pinia store and TailwindCSS.
+Change the store to access your product api.
+Connect a payment api to make the payment work.
 
 ## Setup
 

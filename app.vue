@@ -13,3 +13,6 @@ productStore.fill();
 const sidebarStore = useSidebarStore();
 
 </script>
+<style>
+
+</style>
