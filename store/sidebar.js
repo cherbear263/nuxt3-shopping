@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 
 const state = () => ({
-  sidebarOpen: true
+  sidebarOpen: false
 })
 
 const getters = {

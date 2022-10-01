@@ -12,8 +12,9 @@
         </p>
 
         <div class="d-grid">
-          <button @click="addToCart(product)"
-            class="w-full px-3 py-2 my-3 border-2 border-gray-800 rounded-sm shadow hover:bg-gray-200">Add to
+          <button @click="cartStore.addItem( product)"
+            class="w-full px-3 py-2 my-3 border-2 border-gray-800 rounded-sm shadow hover:bg-indigo-500 hover:text-white">Add
+            to
             Cart</button>
         </div>
       </div>
@@ -21,14 +22,12 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import { useProductStore } from '~~/store/products';
-export default defineComponent({
-  setup() {
-    const productStore = useProductStore()
-    const products = productStore.getProducts
+import { useCartStore } from '~~/store/cart';
+const productStore = useProductStore();
+const products = productStore.products;
+const cartStore = useCartStore();
 
-    return { products }
-  }
-})
+
 </script>

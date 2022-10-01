@@ -47,9 +47,9 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <NuxtLink to="/"
                 class="active:bg-gray-900 active:text-white text-gray-300 px-3 py-2 rounded-md text-sm font-medium"
-                aria-current="page">Home {{ sidebarOpen }}</NuxtLink>
+                aria-current="page">Home</NuxtLink>
 
-              <a href="#" @click="sidebarOpen = !sidebarOpen"
+              <a href="#" @click="sidebarStore.toggleSidebar"
                 class="text-gray-300 active:bg-gray-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Shopping
                 Cart</a>
 
@@ -57,16 +57,18 @@
           </div>
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <button type="button" @click="sidebarOpen = !sidebarOpen"
-            class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+          <button type="button" @click="sidebarStore.toggleSidebar"
+            class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
             <span class="sr-only">Shopping Cart</span>
 
             <!-- Heroicon name: shopping bag -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6">
+              stroke="currentColor" class="w-6 h-6 z-50">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
             </svg>
+            <div class="cart-count absolute -top-3 -right-2 w-6 h-6 rounded-full bg-indigo-500"><span
+                class="text-xs text-white ">{{cartStore.count}}</span></div>
 
           </button>
 
@@ -123,49 +125,22 @@
 
       </div>
     </div>
-    <aside v-if="sidebarOpen">
-      <div @click="sidebarOpen = !sidebarOpen" class="absolute transition ease inset-0 h-full w-full z-0 bg-black/40">
-      </div>
-      <div :class="sidebarOpen ? 'right-0' : '-right-96'"
-        class="transition-transform top-0 bottom-0 w-96 z-10 offcanvas offcanvas-end fixed flex flex-col max-w-full bg-white  bg-clip-padding shadow-sm outline-none duration-500 ease-in-out text-gray-700 border-none"
-        tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header flex items-center justify-between p-4">
-          <h5 class="offcanvas-title mb-0 leading-normal font-semibold" id="offcanvasRightLabel">Offcanvas right</h5>
-          <button type="button" @click="sidebarOpen = !sidebarOpen"
-            class="btn-close box-content w-4 h-4 p-2 -my-5 -mr-2 z-50 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-            data-bs-dismiss="offcanvas" aria-label="Close">X</button>
-        </div>
-        <div class="offcanvas-body flex-grow p-4 overflow-y-auto">
-          ...
-        </div>
-      </div>
-    </aside>
+
   </nav>
 </template>
-<script>
+<script setup>
 import { useSidebarStore } from '@/store/sidebar.js'
-export default {
-  name: 'TheNavbar',
-  data() {
-    return {
-      showMenu: false,
-      showProfile: false,
-      sidebarOpen: false,
-    }
-  },
-  methods: {
-    toggle() {
-      this.showMenu = !this.showMenu;
-    }
-  },
-  setup() {
+import { useCartStore } from '~~/store/cart';
+const showMenu = false;
+const showProfile = false;
+const sidebarStore = useSidebarStore();
+const cartStore = useCartStore();
+const count = cartStore.count
 
-    return {
-
-    }
-
-  }
+const toggle = () => {
+  this.showMenu = !this.showMenu;
 }
+
 </script>
 
 <style>
