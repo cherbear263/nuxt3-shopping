@@ -12,6 +12,8 @@ const getters = {
       return 'Items in your cart'
     } else if (this.page == 'checkout'){
       return 'Checkout'
+    } else if (this.page == 'thanks'){
+      return 'Your Items are on their Way!'
     }
     }
   }

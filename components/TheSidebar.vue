@@ -1,6 +1,6 @@
 <template>
-  <aside v-if="sidebarStore.sidebarOpen" class="">
-    <div @click="close" class="absolute transition ease inset-0 w-full z-0 bg-black/40 ">
+  <aside v-if="sidebarStore.sidebarOpen">
+    <div @click="close" class="absolute transition ease inset-0 w-full h-[100%] z-0 bg-black/40 ">
     </div>
     <div :class="sidebarStore.sidebarOpen ? 'right-0' : '-right-96'"
       class=" overflow-auto transition-transform top-0 bottom-0 z-10 offcanvas offcanvas-end w-[90%] sm:w-[500px] fixed  bg-white  bg-clip-padding shadow-sm outline-none duration-500 ease-in-out text-gray-700 border-none"
@@ -14,7 +14,8 @@
       </div>
       <div class="offcanvas-body flex-grow p-4 overflow-y-auto">
         <ShoppingCart v-if="sidebarStore.page == 'cart'" />
-        <checkout-page v-else />
+        <checkout-page v-else-if="sidebarStore.page =='checkout'" />
+        <thanks-page v-else />
       </div>
     </div>
   </aside>
@@ -28,3 +29,6 @@ const close = () => {
   sidebarStore.toggleSidebar()
 }
 </script>
+<style>
+
+</style>

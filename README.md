@@ -36,3 +36,9 @@ yarn preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+## todo
+- validation on the form
+- product detail page
+- print invoice
+- maybe the user should be able to log in so that they can see their orders?

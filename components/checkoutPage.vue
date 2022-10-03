@@ -103,10 +103,16 @@
               class="w-4 h-4 text-xs px-3 py-2 rounded-full text-white bg-indigo-500 mr-3">2</span>Payment Details</h2>
         </div>
         <div id="paymentDetails" class="flex flex-row gap-2">
-          <div class="mt-3 -ml-3 flex-grow">
+          <div class="mt-3 -ml-3 flex-grow relative">
             <label class="block ml-4" for="ccNum">Credit Card Number</label>
-            <input class="p-2 w-[102%] sm:w-[98%] ml-3" type="text" inputmode="numeric" id="ccNum" name="cardNumber"
-              v-model="paymentDetails.cardNumber" placeholder="card number" required />
+            <input class="p-2 w-[102%] sm:w-[98%] ml-3 pl-9" type="text" inputmode="numeric" id="ccNum"
+              name="cardNumber" v-model="paymentDetails.cardNumber" placeholder="card number" required /><span
+              class="absolute top-9 left-5"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-300">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+              </svg>
+            </span>
           </div>
           <div class="mt-3 w-[100px]">
             <label class="block ml-4" for="expiry">Expiry Date</label>
@@ -131,11 +137,11 @@
           <h3 class="text-indigo-500 font-semibold text-md font-serif">Items you are purchasing</h3>
           <div class="flex flex-col mb-3">
             <div class="flex flex-row justify-between " v-for="item in cartStore.items" :key="item.uuid">
-              <p class="align-left">{{item.amount}} {{item.name}}</p>
+              <p class="align-left">{{item.amount}} x {{item.name}}</p>
               <p>${{item.price}}</p>
             </div>
             <div class="flex flex-row justify-between mb-3">
-              <p>shipping to {{billingAddress.shippingSame? billingAddress.suburb : shippingAddress.suburb}}</p>
+              <p>Shipping to {{billingAddress.shippingSame? billingAddress.suburb : shippingAddress.suburb}}</p>
               <p>${{cartStore.shipping}}</p>
             </div>
             <div class="flex flex-row justify-between font-bold border-t border-gray-300 pt-2">
@@ -157,6 +163,8 @@
 </template>
 <script setup>
 import { useCartStore } from '~~/store/cart';
+import { useSidebarStore } from '~~/store/sidebar';
+const sidebarStore = useSidebarStore();
 const cartStore = useCartStore();
 const steps = ['personal', 'payment']
 let step = ref(steps[0])
@@ -189,7 +197,10 @@ const paymentDetails = ref({
 
 })
 const handleSubmit = () => {
-  console.log('submitted', personal.value, billingAddress.value, shippingAddress.value, paymentDetails.value)
+  console.log('submitted. Clearing cart.')
+  cartStore.$reset()
+  sidebarStore.setPage('thanks')
+
 }
 </script>
 <style scoped>
