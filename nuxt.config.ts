@@ -4,6 +4,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt'
   ],
+  build: {
+    transpile: ['yup', '@vee-validate/rules'],
+  },
+
   css: [
     '@/assets/css/tailwind.css'
   ],

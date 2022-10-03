@@ -14,5 +14,7 @@ const sidebarStore = useSidebarStore();
 
 </script>
 <style>
-
+body {
+  overflow-y: hidden;
+}
 </style>
